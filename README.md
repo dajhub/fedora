@@ -1,0 +1,2 @@
+# fedora
+Minimal install script
