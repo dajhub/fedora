@@ -1,6 +1,7 @@
 # Fedora
 Minimal install script.  Having installed a minimal Fedora installation you will, in the command line need to first install git:
 ~~~
+$ sudo dnf update
 $ sudo dnf install git
 $ git clone https://github.com/dajhub/fedora
 $ cd fedora
