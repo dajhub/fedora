@@ -4,7 +4,8 @@ Minimal install script.  Having installed a minimal Fedora installation you will
 $ sudo dnf install git
 $ git clone https://github.com/dajhub/fedora
 $ cd fedora
-$ sudo ./install.sh
+$ sudo ./1-install.sh
+$ ./2-install-remainder.sh
 ~~~
 
 ### Additional installations

@@ -16,7 +16,7 @@ echo "###############################################"
 echo '# Installing required packages for XFCE desktop...'
 echo "###############################################"
 
-sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit network-manager-applet\
+sudo dnf install -qy xorg-x11-server-Xorg xorg-x11-xinit network-manager-applet\
  xorg-x11-drv-libinput mesa-dri-drivers xfce4-panel xfce4-datetime-plugin\
  xfce4-session xfce4-settings xfce4-terminal xfconf xfdesktop\
  xfce4-appfinder xfce4-power-manager xfce4-pulseaudio-plugin pulseaudio\
@@ -36,10 +36,10 @@ echo "###############################################"
 echo '# Installing RPM Fusion & Flathub...'
 echo "###############################################"
 
-sudo dnf install \
+sudo dnf install -qy \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf install \
+sudo dnf install -qy \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 
@@ -63,11 +63,10 @@ echo "###############################################"
 # ---
 
 echo "###############################################"
-echo '# Installing DNF packages...'
+echo '# Installing DNF packages.  This may take some time ...'
 echo "###############################################"
 
 sudo dnf install -qy \
-    firefox \
     pluma \
     geany \
     file-roller \
@@ -96,97 +95,25 @@ echo "###############################################"
 # ---
 
 echo "###############################################"
-echo "# Creating private folders for later use"
+echo '# Installing Librewolf...'
 echo "###############################################"
 
-set -e
+sudo rpm --import https://keys.openpgp.org/vks/v1/by-fingerprint/034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3
 
-[ -d $HOME"/.icons" ] || mkdir -p $HOME"/.icons"
-[ -d $HOME"/Documents" ] || mkdir -p $HOME"/Documents"
-[ -d $HOME"/Pictures/wallpapers" ] || mkdir -p $HOME"/Pictures/wallpapers"
-[ -d $HOME"/.themes" ] || mkdir -p $HOME"/.themes"
-[ -d $HOME"/.local/share/fonts" ] || mkdir -p $HOME"/.local/share/fonts"
-[ -d $HOME"/.config/gtk-3.0" ] || mkdir -p $HOME"/.config/gtk-3.0"
-[ -d $HOME"/.config/kitty" ] || mkdir -p $HOME"/.config/kitty"
-[ -d $HOME"/.config/geany" ] || mkdir -p $HOME"/.config/geany"
-[ -d $HOME"/.config/rofi" ] || mkdir -p $HOME"/.config/rofi"
-[ -d $HOME"/.config/xfce4/terminal" ] || mkdir -p $HOME"/.config/xfce4/terminal"
+sudo dnf config-manager --add-repo https://rpm.librewolf.net
 
+sudo dnf install -qy --refresh librewolf
 
 echo "###############################################"
-echo "# Personal folders created or existed already"
+echo '# Librewolf installed...'
 echo "###############################################"
-
-# ---
-
-echo "###############################################"
-echo "# Copy fonts to .local/share/fonts/"
-echo "###############################################"
-
-cp -R ~/fedora/fonts/* ~/.local/share/fonts/
-
-fc-cache -fv ~/.fonts
-
-echo "############################################"
-echo "# Fonts have been copied and refreshed       "
-echo "############################################"
-
-# ---
-
-echo "############################################"
-echo "# Copy themes & icons to .themes & .icons"
-echo "############################################"
-
-cp -R ~/fedora/themes/* ~/.themes/
-
-fc-cache -fv ~/.themes
-
-# ---
-
-cp -R ~/fedora/icons/* ~/.icons/
-
-fc-cache -fv ~/.icons
-
-
-echo "############################################"
-echo "# Themes have been copied and refreshed   "
-echo "############################################"
-
-# ---
-
-echo "############################################"
-echo "# Copying files/folders i.e. gtk.css, kitty, geany, rofi, terminalrc"
-echo "############################################"
-
-cp -R ~/fedora/gtk.css ~/.config/gtk-3.0/
-cp -R ~/fedora/kitty/* ~/.config/kitty/
-cp -R ~/fedora/rofi/* ~/.config/rofi/
-cp -R -f ~/fedora/terminalrc ~/.config/xfce4/terminal/
-cp -R -f ~/fedora/geany/* ~/.config/geany/
-
-echo "############################################"
-echo "# Files/folders copied"
-echo "############################################"
-
-# ---
-
-echo "############################################"
-echo "# Copying wallpaperss"
-echo "############################################"
-
-
-cp -R ~/fedora/wallpapers/* ~/Pictures/wallpapers/
-
-
-echo "############################################"
-echo "# Wallpapers copied"
-echo "############################################"
 
 # ---
 
 echo "############################################"
 echo "############################################"
 echo "FINISHED..."
+echo "To finish installation type: './2-install-remainder.sh'"
 echo "############################################"
 echo "############################################"
 
