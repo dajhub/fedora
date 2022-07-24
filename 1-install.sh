@@ -51,7 +51,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # ---
 
-echo 'Upgrade DNF...'
+echo 'Upgrading DNF...'
 
 sudo dnf upgrade --refresh -qy
 
@@ -81,6 +81,7 @@ sudo dnf install -qy \
     flameshot \
     wget \
     xfce4-docklike-plugin \
+    tumbler \
     tar\
     rofi \
     papirus-icon-theme.noarch \
