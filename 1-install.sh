@@ -76,14 +76,17 @@ sudo dnf install -qy \
     xfce4-whiskermenu-plugin \
     light-locker \
     xfce4-screenshooter \
+    xscreensaver \
     viewnior \
     abiword \
     flameshot \
     wget \
     xfce4-docklike-plugin \
+    ffmpeg \
     tumbler \
     tar\
     rofi \
+    task \
     papirus-icon-theme.noarch \
     google-noto-cjk-fonts-common.noarch \
     gcolor2 

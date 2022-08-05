@@ -40,4 +40,5 @@ DefaultWorkingDir=$HOME/Desktop
 ColorBoldIsBright=FALSE
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 CommandLoginShell=TRUE
+FontUseSystem=TRUE
 

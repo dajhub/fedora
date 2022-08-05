@@ -1,0 +1,23 @@
+
+## Config file for dmenu-patched ##
+
+## Define the font for dmenu to be used ##
+DMENU_FN="Roboto:size=11"
+
+## Background color for unselected menu-items ##
+DMENU_NB="#232a2d"
+
+## Textcolor for unselected menu-items ##
+DMENU_NF="#F9FAF9"
+
+## Background color for selected menu-items ##
+DMENU_SB="#B48EAD"
+
+## Textcolor for selected menu-items ##
+DMENU_SF="#000000"
+
+## Command for the terminal application to be used ##
+TERMINAL_CMD="kitty -e"
+
+## Export our variables ##
+DMENU_OPTIONS="-fn $DMENU_FN -b -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"

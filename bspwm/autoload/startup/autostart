@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+
+## Autostart Programs ##
+pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/autoload/keys/sxhkdrc &
+$HOME/.config/polybar/scripts/launch.sh &
+$HOME/.config/bspwm/autoload/swallow/bspswallow &
+pgrep bspswallow || bspswallow &
+nitrogen --restore &
+## feh --bg-max --randomize ~/Pictures/Wallpapers/* &
+
+xsetroot -cursor_name left_ptr &
+xset r rate 250 160 &
+unclutter -idle 3 &
+picom &
+xrdb ~/.config/x11/.Xresources &
+/usr/lib/polkit-1/polkit-agent-helper-1 &
+
+## Kill Auto started Programs If Already Running ##
+killall xsetroot -cursor_name && \
+killall left_ptr && \
+killall picom && \
+killall gammastep && \
+killall sxhkd && \
+killall ksuperkey && \
+killall xwallpaper && \
+killall xset && \
+killall unclutter && \
+killall xsettingsd && \
+killall bspswallow

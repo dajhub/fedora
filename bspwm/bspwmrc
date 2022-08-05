@@ -1,0 +1,65 @@
+#!/usr/bin/sh
+
+## Autostart Script ##
+$HOME/.config/bspwm/autoload/startup/autostart
+
+## Workspaces ##
+bspc monitor -d '' '' '' '' '' '' 
+#'' '' ''
+
+## General Settings ##
+bspc config border_width 1
+bspc config split_ratio 0.46
+bspc config window_gap 6
+bspc config right_padding 1
+bspc config left_padding 1
+bspc config bottom_padding 1
+
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config paddingless_monocle true
+bspc config single_monocle false
+bspc config focus_follows_pointer true
+bspc config normal_border_color "#2F3D44"
+bspc config focused_border_color "#969696"
+
+## Rule Set ##
+bspc rule -a File Transfer* state=floating
+bspc rule -a Save file state=floating
+bspc rule -a Timeshift-gtk state=floating
+bspc rule -a mpv state=floating
+bspc rule -a Lxappearance state=floating
+
+## Window Rules ##
+
+# 1 > web
+bspc rule -a Librewolf desktop='^1' follow=on focus=on
+bspc rule -a Brave-browser desktop='^1' follow=on focus=on
+
+
+# 2 > terminal
+bspc rule -a kitty desktop='^2' follow=on focus=on
+bspc rule -a alacritty desktop='^2' follow=on focus=on
+bspc rule -a Xfce4-terminal desktop='^2' follow=on focus=on
+
+# 3 > files
+declare -a files=(pcmanfm Thunar qBittorrent)
+for i in ${files[@]}; do
+   bspc rule -a $i desktop='^3' follow=on focus=on; done
+
+# 4 > notes
+bspc rule -a Xed desktop='^4' follow=on focus=on
+bspc rule -a Abiword desktop='^4' follow=on focus=on
+
+# 5 > code
+bspc rule -a Code desktop='^5' follow=on focus=on
+bspc rule -a geany desktop='^5' follow=on focus=on
+
+# 6 > settings
+bspc rule -a "Virt-manager" desktop='^6' follow=on focus=on
+bspc rule -a GParted desktop='^6' follow=on focus=on
+declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
+System-config-printer.py Pavucontrol Exo-helper-1 \
+Xfce4-power-manager-settings)
+for i in ${settings[@]}; do
+   bspc rule -a $i desktop='^6' state=floating follow=on focus=on; done
