@@ -1,0 +1,132 @@
+/**************** xfce4-panel stuffs **********************/
+
+.xfce4-panel button,
+#docklike-plugin .group {
+	transition: 0.2s;
+	border-radius: 3;
+	margin: 5;
+	box-shadow: none;
+	background-color: rgba(255,255,255,0.04);
+}
+
+.xfce4-panel.background .tasklist button {
+	font-size: 12px;
+}
+
+.xfce4-panel.background button:active, 
+.xfce4-panel.background button:hover, 
+.xfce4-panel.background button:active:hover, 
+.xfce4-panel.background .tasklist button:active,
+.xfce4-panel.background .tasklist button:hover, 
+.xfce4-panel.background .tasklist button:active:hover,
+#docklike-plugin .hover_group {
+	background-color: hsla(0, 0%, 100%, 0.07);
+}
+
+.xfce4-panel button:checked {
+	background-color: rgba(255,255,255,0.1);
+}
+
+
+/* Whiskermenu */
+/*#whiskermenu-7 button {
+	background-color: #67b0e8;
+}
+window#whiskermenu-window>frame>border {
+	border: 5px solid transparent;
+}
+
+window#whiskermenu-window scrolledwindow {
+	margin: 2px;
+	border: none;
+}
+
+#whiskermenu-window treeview {
+	padding: 7px 0px 7px 10px;
+}
+
+#whiskermenu-window iconview {
+	font-size: 12px;
+	padding: 5px 0;
+	border-radius: 3px;
+}*/
+
+/*general area*/
+
+#whiskermenu-7 button {
+	background-color: #67b0e8;
+}
+
+#whiskermenu-window {
+	color: #dadada;
+  	background-color: #21282A
+}
+
+/*category buttons*/
+#whiskermenu-window button {
+	background-color: #21282A;
+	color: #dadada;
+}
+#whiskermenu-window button:hover {
+	background-color: #3A4245;
+	color: #dadada;
+}
+#whiskermenu-window button:checked {
+	background-color: #6cbfbf;
+	color: #232a2d;
+}
+#whiskermenu-window button:focus {
+	background-color: #3f4453;
+	color: #dadada;
+}
+
+/*tree list -- Not been edited by me (DAJ)*/
+#whiskermenu-window treeview {
+	background-color: #fff;
+	color: #2b2e37;
+}
+#whiskermenu-window treeview:hover {
+	background-color: #3f4453;
+	color: #f2f2f2;
+}
+#whiskermenu-window treeview:selected {
+	background-color: #3f4453;
+	color: #f2f2f2;
+	outline-color: #3f4453;
+}
+
+#whiskermenu-window *:not(button){
+	border-color: #2b2e37;
+}
+
+
+/**************** Alt+Tab window **********************/
+
+#xfwm-tabwin {
+	border-radius: 5px;
+	border: none;
+}
+
+#xfwm-tabwin button {
+	padding: 6px 10px;
+}
+
+
+/******************* Thunar *************************/
+
+* {
+	-ThunarAbstractIconView-row-spacing: 10;
+	-ThunarAbstractIconView-column-spacing: 10;
+}
+
+.thunar .standard-view .view {
+	padding: 5px 14px;
+}
+
+.thunar .sidebar .view {
+	padding-left: 0;
+}
+.thunar .sidebar .view:selected {
+	background-color: rgba(255,255,255,0.1);
+	border-left: 2px solid #6695a3;
+}
