@@ -13,7 +13,7 @@ set -e
 [ -d $HOME"/Documents" ] || mkdir -p $HOME"/Documents"
 [ -d $HOME"/Pictures/wallpapers" ] || mkdir -p $HOME"/Pictures/wallpapers"
 [ -d $HOME"/.themes" ] || mkdir -p $HOME"/.themes"
-[ -d $HOME"/.local/share/fonts" ] || mkdir -p $HOME"/.local/share/fonts"
+[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
 [ -d $HOME"/.config/gtk-3.0" ] || mkdir -p $HOME"/.config/gtk-3.0"
 [ -d $HOME"/.config/kitty" ] || mkdir -p $HOME"/.config/kitty"
 [ -d $HOME"/.config/geany" ] || mkdir -p $HOME"/.config/geany"
@@ -28,10 +28,10 @@ echo "###############################################"
 # ---
 
 echo "###############################################"
-echo "# Copy fonts to .local/share/fonts/"
+echo "# Copy fonts to .fonts"
 echo "###############################################"
 
-cp -R ~/fedora/fonts/* ~/.local/share/fonts/
+cp -R ~/fedora/.fonts/* ~/.fonts/
 
 fc-cache -fv ~/.fonts
 
@@ -45,13 +45,13 @@ echo "############################################"
 echo "# Copy themes & icons to .themes & .icons"
 echo "############################################"
 
-cp -R ~/fedora/themes/* ~/.themes/
+cp -R ~/fedora/.themes/* ~/.themes/
 
 fc-cache -fv ~/.themes
 
 # ---
 
-cp -R ~/fedora/icons/* ~/.icons/
+cp -R ~/fedora/.icons/* ~/.icons/
 
 fc-cache -fv ~/.icons
 
@@ -67,10 +67,10 @@ echo "# Copying files/folders i.e. gtk.css, kitty, geany, rofi, terminalrc"
 echo "############################################"
 
 cp -R ~/fedora/gtk.css ~/.config/gtk-3.0/
-cp -R ~/fedora/kitty/* ~/.config/kitty/
-cp -R ~/fedora/rofi/* ~/.config/rofi/
+cp -R ~/fedora/.config/kitty/* ~/.config/kitty/
+cp -R ~/fedora/.config/rofi/* ~/.config/rofi/
 cp -R -f ~/fedora/terminalrc ~/.config/xfce4/terminal/
-cp -R -f ~/fedora/geany/* ~/.config/geany/
+cp -R -f ~/fedora/.config/geany/* ~/.config/geany/
 
 echo "############################################"
 echo "# Files/folders copied"
@@ -79,7 +79,7 @@ echo "############################################"
 # ---
 
 echo "############################################"
-echo "# Copying wallpaperss"
+echo "# Copying wallpapers"
 echo "############################################"
 
 
